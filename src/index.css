@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-bg: var(--bg);
+  --color-app-accent: var(--accent);
+  --color-app-highlight: var(--highlight);
+  --color-app-card: var(--card-bg);
+  --color-app-text: var(--text-color);
+  --color-app-border: var(--border-color);
+  --color-app-sidebar: var(--sidebar-bg);
+}
+
+:root {
+  --bg: #F0F4FF;
+  --accent: #4A90E2;
+  --highlight: #34C759;
+  --text-color: #1A1A1A;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(74, 144, 226, 0.2);
+  --sidebar-bg: #FFFFFF;
+}
+
+.dark {
+  --bg: #0A0F1F;
+  --accent: #00D2FF;
+  --highlight: #9A5EFF;
+  --text-color: #F0F4FF;
+  --card-bg: rgba(22, 27, 46, 0.9);
+  --border-color: rgba(0, 210, 255, 0.2);
+  --sidebar-bg: #060A16;
+}

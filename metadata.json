@@ -1,0 +1,5 @@
+{
+  "name": "OpenClaw Mission Control",
+  "description": "Central dashboard for managing OpenClaw agents, schedules, and API usage.",
+  "requestFramePermissions": []
+}
