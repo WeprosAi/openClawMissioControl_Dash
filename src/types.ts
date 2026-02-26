@@ -6,6 +6,7 @@ export type Page =
   | 'conversations' 
   | 'intel' 
   | 'telemetry' 
+  | 'workspaces'
   | 'notes' 
   | 'settings' 
   | 'help'
@@ -27,8 +28,9 @@ export interface Agent {
   parent_id?: string;
   status: 'online' | 'busy' | 'idle' | 'offline';
   capabilities: string[];
-  access_scope: 'read-only' | 'draft only' | 'can deploy with approval';
+  access_scope: 'read-only' | 'draft only' | 'can deploy with approval' | 'full-access';
   api_provider_id?: string;
+  instructions?: string;
 }
 
 export interface Job {
@@ -73,4 +75,46 @@ export interface AgentWork {
   file_name: string;
   content: string;
   created_at: string;
+}
+
+export interface BoardroomSession {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  created_at?: string;
+}
+
+export interface BoardroomMessage {
+  id: string;
+  session_id: string;
+  role: 'user' | 'agent';
+  name: string;
+  content: string;
+  timestamp?: string;
+}
+
+export interface BoardroomTask {
+  id: string;
+  session_id?: string;
+  text: string;
+  completed: boolean;
+  created_at?: string;
+}
+
+export interface Conversation {
+  id: string;
+  agent_id: string;
+  agent_name?: string;
+  last_message: string | null;
+  updated_at: string;
+}
+
+export interface Message {
+  id: string;
+  conversation_id: string;
+  agent_id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: string;
 }
